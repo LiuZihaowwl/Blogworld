@@ -25,3 +25,12 @@ CREATE TABLE `blog` (
   FOREIGN KEY (`u_id`) REFERENCES user(`u_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1029 DEFAULT CHARSET=utf8;
 
+CREATE TABLE `user_auths` (
+  `uu_id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '授权表ID',
+  `u_id` bigint(20) NOT NULL COMMENT '用户ID',
+  `credential` varchar(30) NOT NULL COMMENT '用户密码',
+  `ifverified` varchar(4) NOT NULL  COMMENT '是否被验证',
+  PRIMARY KEY (`uu_id`),
+  FOREIGN KEY (`u_id`) REFERENCES user(`u_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1029 DEFAULT CHARSET=utf8;
+
