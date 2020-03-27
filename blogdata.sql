@@ -34,3 +34,4 @@ CREATE TABLE `user_auths` (
   FOREIGN KEY (`u_id`) REFERENCES user(`u_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1029 DEFAULT CHARSET=utf8;
 
+
