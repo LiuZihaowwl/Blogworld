@@ -1,10 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+
 <head>
-    <meta charset="UTF-8">
-    <title>Blogworld</title>
+    <meta charset="utf-8">
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            font-family:宋体;
+
+        }
+        div{
+            width:50%;
+            height:250px;
+            border:1px solid rgb(202,205,158);
+            margin:50px auto;
+        }
+        p{
+            font-size:1em;
+            font-weight:bold;
+            background:rgb(202,205,158);
+
+            padding:0.2em;
+        }
+        ul{
+
+            list-style-type:none;
+            font-size:0.8em;
+
+        }
+        li{
+            padding:0.7em;
+            padding-left:1.75em;
+            border-bottom:1px dashed black;
+            background:url(download.jpg) no-repeat;
+            background-size:2em 2em;
+            background-position:0 0.1em;
+        }
+        li>span{
+            diaplay:inlie-block;
+            float:right;
+            width:12em;
+        }
+    </style>
 </head>
 <body>
-博客管理
+<div>
+    <p>>>文章</p>
+    <ul>
+        <li th:each="blog : ${blogs}" th:text="${blog.getB_title()}"></li>
+
+    </ul>
+</div>
 </body>
 </html>

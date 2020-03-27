@@ -30,32 +30,32 @@
         $(function() {
             //初始化查询菜单
 //        initData();
-            $("#menus").on("click", ".changeUrl", function() {
+            $("#menus").on("click", ".changeUrl", function () {
                 var id = $(this).attr("id");
                 var url = $(this).attr("value");
 
                 /*<![CDATA[*/
-                if(id && url){
+                if (id && url) {
                     addTabs({
-                        id:id,
-                        title:$(this).text(),
-                        url:url,
-                        close:true
+                        id: id,
+                        title: $(this).text(),
+                        url: url,
+                        close: true
                     });
                 }
                 /*]]>*/
 
 
             });
-            $(".nav-tabs").on("click", ".close-tab", function() {
+            $(".nav-tabs").on("click", ".close-tab", function () {
                 id = $(this).prev("a").attr("aria-controls");
                 closeTab(id);
             });
 
-            $("#mainIframe").load(function(){
-                var mainheight =$(this).contents().find("body").height();
+            $("#mainIframe").load(function () {
+                var mainheight = $(this).contents().find("body").height();
                 /*<![CDATA[*/
-                if(mainheight<400){
+                if (mainheight < 400) {
                     mainheight = 400;
                 }
                 /*]]>*/
@@ -63,7 +63,7 @@
             });
 
             //退出操作
-           /* $("#outLogin").click(function(){
+            /* $("#outLogin").click(function(){
                 $.ajax({
                     url: "/loginOut",
                     cache: false,
@@ -83,26 +83,27 @@
             });
         });*/
 
-        //打开菜单
-        function changeUrl(url) {
-            clearFlash();
-            $("#mainFrame").attr("src","/" + url);
-        }
-        //清除iframe
-        function clearFlash() {
-            try {
-                //在iframe销毁前清理掉iframe中的内容（特别是flash）
-                $("#mainFrame").contents().find("body").empty();
-            } catch (e) {
+            //打开菜单
+            function changeUrl(url) {
+                clearFlash();
+                $("#mainFrame").attr("src", "/" + url);
             }
-        }
+
+            //清除iframe
+            function clearFlash() {
+                try {
+                    //在iframe销毁前清理掉iframe中的内容（特别是flash）
+                    $("#mainFrame").contents().find("body").empty();
+                } catch (e) {
+                }
+            }
     </script>
 </head>
 <body>
 <div class="navbar navbar-default" id="navbar">
     <div class="navbar-container" id="navbar-container">
         <div class="navbar-header pull-left">
-            <a th:href="@{/}"  class="navbar-brand" style="height: 45px;">
+            <a th:href="@{#}"  class="navbar-brand" style="height: 45px;">
                 <small>
                     <img class="logo"  th:src="@{../assets/images/logo.png}" /> 用户管理页面
                 </small>
@@ -219,61 +220,7 @@
                     </a>
 
                     <ul class="pull-right dropdown-navbar dropdown-menu dropdown-caret dropdown-close">
-                        <li class="dropdown-header">
-                            <i class="icon-envelope-alt"></i>
-                            5条消息
-                        </li>
 
-                        <li>
-                            <a href="#">
-                                <img src="/static/assets/avatars/avatar.png" class="msg-photo" alt="Alex's Avatar" />
-                                <span class="msg-body">
-                                    <span class="msg-title">
-                                        <span class="blue">Alex:</span>
-                                        World
-                                    </span>
-
-                                    <span class="msg-time">
-                                        <i class="icon-time"></i>
-                                        <span>1分钟以前</span>
-                                    </span>
-                                </span>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#">
-                                <img th:src="@{/static/assets/avatars/avatar3.png}" class="msg-photo" alt="Susan's Avatar" />
-                                <span class="msg-body">
-                                    <span class="msg-title">
-                                        <span class="blue">Susan:</span>
-                                        Try
-                                    </span>
-
-                                    <span class="msg-time">
-                                        <i class="icon-time"></i>
-                                        <span>20分钟以前</span>
-                                    </span>
-                                </span>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#">
-                                <img th:src="@{/static/assets/avatars/avatar4.png}" class="msg-photo" alt="Bob's Avatar" />
-                                <span class="msg-body">
-                                    <span class="msg-title">
-                                        <span class="blue">Bob:</span>
-                                        Yeah
-                                    </span>
-
-                                    <span class="msg-time">
-                                        <i class="icon-time"></i>
-                                        <span>下午3:15</span>
-                                    </span>
-                                </span>
-                            </a>
-                        </li>
 
                         <li>
                             <a href="inbox.html">
