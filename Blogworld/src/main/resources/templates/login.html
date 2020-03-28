@@ -4,11 +4,11 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Blogworld</title>
 
-    <link rel="stylesheet" href="../static/assets/css/jq22.css"  th:href="@{/assets/css/jq22.css}"  />
-    <link rel="stylesheet" href="../static/assets/css/font-awesome.min.css" th:href="@{/assets/css/font-awesome.min.css}"/>
-    <script src="../static/assets/js/jquery-1.10.2.min.js" th:src="@{/assets/js/jquery-1.10.2.min.js}"></script>
-    <script src="../static/assets/js/bootstrap.min.js" th:src="@{/assets/js/bootstrap.min.js}"></script>
-    <script src="../static/assets/js/jquery.messager.js" th:src="@{/assets/js/jquery.messager.js}"></script>
+    <link rel="stylesheet"   th:href="@{/assets/css/jq22.css}"  />
+    <link rel="stylesheet"  th:href="@{/assets/css/font-awesome.min.css}"/>
+    <script  th:src="@{/assets/js/jquery-1.10.2.min.js}"></script>
+    <script  th:src="@{/assets/js/bootstrap.min.js}"></script>
+    <script  th:src="@{/assets/js/jquery.messager.js}"></script>
     <script type="text/javascript">
         $(function() {
             $('#login #password').focus(function() {
@@ -48,7 +48,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="form-actions"><a href="#" tabindex="5" class="btn pull-left btn-link text-muted">Forgot password?</a><a href="#" tabindex="6" class="btn btn-link text-muted">Sign Up</a>
+                <div class="form-actions"><a href="#" tabindex="5" class="btn pull-left btn-link text-muted">Forgot password?</a><a th:href="@{/sign_up }" tabindex="6" class="btn btn-link text-muted">Sign Up</a>
                     <input type="submit" id="doLogin" tabindex="2" value="Login" class="btn btn-primary">
                 </div>
             </form>

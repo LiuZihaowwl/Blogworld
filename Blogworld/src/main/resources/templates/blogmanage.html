@@ -3,54 +3,70 @@
 
 <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" th:href="@{/assets/css/layui.css}" />
+    <script type = "text/javascript">
+        function p_del() {
+            var msg = "您真的确定要删除吗？";
+            if (confirm(msg)==true){
+                return true;
+            }else{
+                return false;
+            }
+        }
+        function p_cha() {
+            var msg = "您真的确定要修改吗？";
+            if (confirm(msg)==true){
+                return true;
+            }else{
+                return false;
+            }
+        }
+    </script>
     <style>
-        *{
-            margin:0;
-            padding:0;
-            font-family:宋体;
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+        }
 
+        li {
+            float: left;
         }
-        div{
-            width:50%;
-            height:250px;
-            border:1px solid rgb(202,205,158);
-            margin:50px auto;
-        }
-        p{
-            font-size:1em;
-            font-weight:bold;
-            background:rgb(202,205,158);
 
-            padding:0.2em;
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
         }
-        ul{
 
-            list-style-type:none;
-            font-size:0.8em;
-
-        }
-        li{
-            padding:0.7em;
-            padding-left:1.75em;
-            border-bottom:1px dashed black;
-            background:url(download.jpg) no-repeat;
-            background-size:2em 2em;
-            background-position:0 0.1em;
-        }
-        li>span{
-            diaplay:inlie-block;
-            float:right;
-            width:12em;
+        li a:hover {
+            background-color: #111;
         }
     </style>
 </head>
-<body>
-<div>
-    <p>>>文章</p>
-    <ul>
-        <li th:each="blog : ${blogs}" th:text="${blog.getB_title()}"></li>
+<ul class="head_bar" th:include="bar :: #head" />
+<fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+    <legend>文章</legend>
+</fieldset>
 
-    </ul>
+<div style="padding: 20px; background-color: #F2F2F2;">
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-md6">
+            <div class="layui-card">
+                <table th:each="blog : ${blogs}">
+                <tr><a th:href="@{/blogDetail(id = ${blog.getB_id()})}" th:text = "${blog.getB_title()}" class="layui-card-header"></a>
+                    <a th:href="@{/blogDelete(id = ${blog.getB_id()})}" th:text ="删除" onclick="javascript:return p_del()"></a>&nbsp;&nbsp;
+                    <a th:href="@{/blogChange(id = ${blog.getB_id()})}" th:text ="修改" onclick="javascript:return p_cha()"></a>
+                </tr>
+                </table>
+
+            </div>
+        </div>
+        </div>
 </div>
 </body>
 </html>

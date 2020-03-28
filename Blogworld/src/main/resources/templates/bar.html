@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <link rel="stylesheet" type="text/css" th:href="@{/assets/css/layui.css}" />
+</head>
+
+<body>
+<div class="head_bar" th:fragment="bar">
+<ul id="head">
+    <li><a class="active" th:href="@{/index}">主页</a></li>
+    <li><a th:href="@{/blogManage}">博客</a></li>
+    <li><a href="#contact">联系</a></li>
+    <li><a th:href="@{/autho_detail}">关于</a></li>
+</ul>
+</div>
+</body>
+</html>

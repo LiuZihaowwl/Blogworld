@@ -12,7 +12,7 @@ public class User_authsDaoImpl implements User_authsDao {
     @Autowired
     private JdbcTemplate jdbcTemplate;
     public int add(User_auths u){
-        return jdbcTemplate.update("insert into user_auths(uu_id, u_id,credential,ifverified) values(?, ?, ?,?)",u.getUu_id(),u.getU_id(),u.getCredential(),u.getIfverified());
+        return jdbcTemplate.update("insert into user_auths(uu_id, u_id,credential,ifverified) values(?, ?, ?,?)",null,u.getU_id(),u.getCredential(),u.getIfverified());
     }
     public int update(User_auths u){
         return 1;

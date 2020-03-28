@@ -19,4 +19,5 @@ public class UserserviceImpl implements Userservice{
     public User queryUserByPhone(String phone){
         return userDao.queryUserByPhone(phone);
     }
+    public User queryUserById(Long id){return userDao.queryUserById(id);}
 }
