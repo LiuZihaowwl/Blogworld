@@ -2,8 +2,11 @@ package com.hao.Blogworld.Entity;
 
 import lombok.Data;
 
+import java.io.Serializable;
+
 @Data
-public class Blog {
+public class Blog implements Serializable {
+    private static final long serialVersionUID = -1L;
     private long b_id;
     private String b_title;
     private long u_id;
@@ -21,5 +24,11 @@ public class Blog {
     }
 
     public Blog() {
+    }
+    @Override
+    public String toString(){
+        return "Blog{"+
+                "id=" + b_id +
+                ", title=" + b_title;
     }
 }

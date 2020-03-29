@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hao.Blogworld.Dao.User_authsDao">
+    <resultMap id="BaseResultMap" type="com.hao.Blogworld.Entity.User_auths">
+        <result column="uu_id" property="uu_id" />
+        <result column="u_id" property="u_id" />
+        <result column="credential" property="credential" />
+        <result column="ifverified" property="ifverified" />
+    </resultMap>
+
+    <sql id="Base_Column_List">
+		uu_id,u_id, credential, ifverified
+	</sql>
+
+    <select id="queryUserByU_id" resultMap="BaseResultMap" parameterType="java.lang.Long">
+        select * from user_auths where u_id = #{u_id}
+    </select>
+
+</mapper>

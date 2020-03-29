@@ -1,6 +1,6 @@
 package com.hao.Blogworld.Service.Impl;
 
-import com.hao.Blogworld.Dao.User_authsDao;
+import com.hao.Blogworld.Dao.master.User_authsDao;
 import com.hao.Blogworld.Entity.User_auths;
 import com.hao.Blogworld.Service.User_authsservice;
 import org.springframework.beans.factory.annotation.Autowired;
