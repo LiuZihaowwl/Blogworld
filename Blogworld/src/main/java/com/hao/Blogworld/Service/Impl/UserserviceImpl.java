@@ -26,6 +26,8 @@ public class UserserviceImpl implements Userservice{
         return userDao.update(user);
     }
     public User queryUserByPhone(String phone){
+        // 开启事务支持，在同一个 Connection 中执行命令
+        redisTemplate.setEnableTransactionSupport(true);
         String key = "user_"+phone;
         ValueOperations<String, User> operations = redisTemplate.opsForValue();
         // 缓存存在
@@ -37,7 +39,7 @@ public class UserserviceImpl implements Userservice{
             return user;
         }
 
-        // 从 DB 中获取城市信息
+
         User user = userDao.queryUserByPhone(phone);
 
         // 插入缓存

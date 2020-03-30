@@ -18,5 +18,8 @@
     <select id="queryUserByPhone" resultMap="user" parameterType="java.lang.String">
         select * from user where phone = #{phone};
     </select>
+    <insert id="add"    parameterType="com.hao.Blogworld.Entity.User">
+        insert into user values (#{user.u_id},#{user.u_name},#{user.gender},#{user.birthday },#{user.phone},#{user.email},#{user.signal})
+    </insert>
 
 </mapper>

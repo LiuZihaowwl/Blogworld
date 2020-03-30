@@ -19,6 +19,7 @@ public class ErrorPageConfig implements ErrorPageRegistrar {
         ErrorPage e404 = new ErrorPage(HttpStatus.NOT_FOUND, "/error/404");
 //错误类型为500，表示服务器响应错误，默认显示500.html网页
         ErrorPage e500 = new ErrorPage(HttpStatus.INTERNAL_SERVER_ERROR, "/error/500");
-        errorPageRegistry.addErrorPages(e404, e500);
+        ErrorPage e405 = new ErrorPage(HttpStatus.METHOD_NOT_ALLOWED, "/error/405");
+        errorPageRegistry.addErrorPages(e404, e500,e405);
     }
 }

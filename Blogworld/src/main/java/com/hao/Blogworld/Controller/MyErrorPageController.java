@@ -26,4 +26,8 @@ public class MyErrorPageController  {
     public String error_500() {
         return "common/error_500";
     }
+    @GetMapping(value = "/405")
+    public String error_405() {
+        return "common/error_405";
+    }
 }

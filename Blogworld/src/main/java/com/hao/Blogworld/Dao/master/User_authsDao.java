@@ -6,7 +6,8 @@ import org.apache.ibatis.annotations.*;
 
 @Mapper
 public interface User_authsDao {
-    int add(User_auths u);
+    @Insert("insert into user_auths values(#{user.uu_id},#{user.u_id},#{user.credential},#{user.ifverified})")
+    int add(@Param("user") User_auths u);
     int update(User_auths u);
 
 
